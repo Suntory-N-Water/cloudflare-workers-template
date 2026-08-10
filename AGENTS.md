@@ -3,7 +3,6 @@
 - Hono 関連の情報は`hono` コマンドを使用する
   - 使用方法は`hono --help` で確認する
 - GitHub の情報取得には `gh` コマンドを使用する
-- ライブラリの仕様は Context7 MCP サーバーを使用する
 - `lint` エラー時は `unsafe-fix` を使用してから個別に修正する
 - `wrangler` コマンドは、必ず `bunx wrangler` で実行する
 
