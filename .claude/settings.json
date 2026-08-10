@@ -51,20 +51,54 @@
       "Bash(.env)",
       "Read(.dev.vars)",
       "Bash(.dev.vars)",
-      "Write(.env*)",
-      "Write(.dev.vars)",
+      "Edit(.env*)",
+      "Edit(.dev.vars)",
       "NotebookEdit"
-    ],
-    "ask": [
-      "Bash(git push:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git checkout:*)",
-      "Bash(git switch:*)",
-      "Bash(rm:*)",
-      "Bash(curl:*)"
     ]
   },
   "plansDirectory": ".claude/plans",
-  "autoMemoryEnabled": false
+  "autoMemoryEnabled": false,
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bun run --silent -i ~/.claude/scripts/typescript/multi-command-check.ts -c format,lint:ai",
+            "statusMessage": "静的解析・テスト実行中..."
+          },
+          {
+            "type": "command",
+            "command": "bun run --silent -i ~/.claude/scripts/typescript/fix-brackets.ts",
+            "statusMessage": "ブラケット修正中..."
+          },
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Glass.aiff",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bun run --silent -i ~/.claude/scripts/typescript/no-restricted-edit.ts"
+          }
+        ]
+      },
+      {
+        "matcher": "WebFetch|Fetch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bun run --silent -i ~/.claude/scripts/typescript/web-fetch-advice.ts"
+          }
+        ]
+      }
+    ]
+  }
 }
