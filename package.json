@@ -22,16 +22,16 @@
   "dependencies": {
     "@hono/standard-validator": "^0.4.0",
     "drizzle-orm": "^0.45.2",
-    "hono": "^4.13.5",
-    "valibot": "^1.4.2"
+    "hono": "^4.13.7",
+    "valibot": "^1.5.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.15",
     "@tsconfig/strictest": "^2.0.8",
-    "@types/bun": "^1.4.0",
-    "@types/node": "^25.9.5",
+    "@types/bun": "^1.4.2",
+    "@types/node": "^25.9.6",
     "drizzle-kit": "^0.31.10",
     "typescript": "^7.0.2",
-    "wrangler": "^4.129.0"
+    "wrangler": "^4.131.0"
   }
 }
