@@ -20,18 +20,18 @@
     "db:migrate:remote": "bunx wrangler d1 migrations apply cloudflare-workers-template --remote"
   },
   "dependencies": {
-    "@hono/standard-validator": "^0.4.0",
+    "@hono/standard-validator": "^0.4.1",
     "drizzle-orm": "^0.45.4",
-    "hono": "^4.13.13",
+    "hono": "^4.13.14",
     "valibot": "^1.5.0"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.15",
     "@tsconfig/strictest": "^2.0.8",
-    "@types/bun": "^1.4.3",
+    "@types/bun": "^1.4.4",
     "@types/node": "^25.9.9",
     "drizzle-kit": "^0.31.11",
     "typescript": "^7.0.2",
-    "wrangler": "^4.152.0"
+    "wrangler": "^4.156.0"
   }
 }
